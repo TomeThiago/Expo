@@ -3,14 +3,15 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F8F9F9',
+        backgroundColor: '#424242',
+        backgroundImage: 'url(../assets/bg-pizza.jpg)',
         justifyContent: 'center',
         alignItems: 'stretch',
         paddingHorizontal: 30
     },
 
     tituloTxt: {
-        color: '#b41a00',
+        color: '#FFF',
         fontWeight: 'bold',
         fontSize: 25,
         alignSelf: 'center',
@@ -20,8 +21,8 @@ const styles = StyleSheet.create({
     input: {
         height: 45,
         borderWidth: 1,
-        borderColor: '#4D5656',
-        color: '#717D7E',
+        borderColor: '#DDD',
+        color: '#FFF',
         borderRadius: 4,
         fontSize: 16,
         paddingHorizontal: 20,
@@ -54,20 +55,14 @@ const styles = StyleSheet.create({
 
     footerContainer: {
         justifyContent: 'flex-end',
-        alignItems: 'center',
-        marginTop : 20
+        alignItems: 'center'
     },
 
     footerText: {
-        color: '#717D7E',
+        color: '#FFF',
         fontSize: 16,
+        fontWeight: 'bold'
     },
-    footerBold: {
-        color: '#717D7E',
-        fontSize: 16,
-        fontWeight: 'bold',
-        fontStyle: 'italic'
-    }
 });
 
 export default styles;

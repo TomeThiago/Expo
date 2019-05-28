@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { AsyncStorage } from "react-native";
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import Logo from '../../../assets/DeliveryLogo.png';
+import Logo from '../../../assets/pizza-icon-lg.png';
 import styles from './styles';
 
 export default class Login extends Component {
@@ -43,16 +43,17 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.tituloTxt}>Delivery Now</Text>
 
                 <View style={styles.logoContainer}>
-                    <Image source={Logo} style={{width: 110, height: 110,alignSelf: 'center'}}/>
+                    <Image source={Logo} style={{width: 110, height: 120,alignSelf: 'center'}}/>
                 </View>
+                
+                <Text style={styles.tituloTxt}>Delivery Now</Text>
 
                 <View>
                     <TextInput style={styles.input}
                         placeholder="Digite seu usuário ou email"
-                        placeholderTextColor="#FFF"
+                        placeholderTextColor="#717D7E"
                         returnKeyType="next"
                         keyboardType="email-address"
                         autoCapitalize='none'
@@ -64,7 +65,7 @@ export default class Login extends Component {
                     
                     <TextInput style={styles.input}
                         placeholder="Digite sua senha"
-                        placeholderTextColor="#FFF"
+                        placeholderTextColor="#717D7E"
                         returnKeyType="go"
                         autoCapitalize='none'
                         autoCorrect={false}
@@ -85,7 +86,8 @@ export default class Login extends Component {
                 </TouchableOpacity>
 
                 <View style={styles.footerContainer}>
-                    <Text style={styles.footerText}>Desenvolvido por Thiago Tomé</Text>
+                    <Text style={styles.footerText}>Desenvolvido por</Text>
+                    <Text style={styles.footerBold}>G06 Team</Text>
                 </View>
             </View>
         );

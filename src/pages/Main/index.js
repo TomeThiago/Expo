@@ -29,8 +29,8 @@ export default class Main extends Component {
     }
 
     novoPedido = async () => {
-        //const response = await api.post('/pedido', {});
-        //await AsyncStorage.setItem('@DeliveryNow: pedido', response.data._id);
+        const response = await api.post('/pedido', {});
+        await AsyncStorage.setItem('@DeliveryNow: pedido', response.data._id);
         this.props.navigation.navigate('Itens');
     }
 

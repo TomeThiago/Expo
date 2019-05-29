@@ -20,6 +20,7 @@ const Routes = createAppContainer(
             screen: Home,
             navigationOptions: () => ({
                 title: 'Home',
+                headerLeft: null,
                 headerStyle: {
                     align: 'center',
                     backgroundColor: '#1e88e5',
@@ -34,7 +35,7 @@ const Routes = createAppContainer(
        Main: {
             screen: Main,
             navigationOptions: () => ({
-                title: 'Pedidos',
+                title: 'Pedidos',                
                 headerStyle: {
                     align: 'center',
                     backgroundColor: '#1e88e5',

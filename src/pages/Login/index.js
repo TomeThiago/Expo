@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { AsyncStorage } from "react-native";
 
+import api from '../../services/api';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Logo from '../../../assets/pizza-icon.png';
 import styles from './styles';
@@ -20,15 +21,27 @@ export default class Login extends Component {
         if (box) {
             this.props.navigation.navigate('Home');    
         }
+        backHandler.addEventListener('hardwareBackPress', () => { return false; });
+    }
+
+    componentWillUnmount() {
+        this.backHandler.remove();
     }
 
     handleSignIn = async () => {
-        if ((this.state.user != 'Thiago') || (this.state.pass != 'teste')) {
-            alert('Usuário ou senha inválidos!');
-        } else {
+        const response = await api.post('/authenticate', {
+            user: this.state.user,
+            password: this.state.pass
+        });
+
+        const { user } = response.data;
+
+        if (!user) {
             await AsyncStorage.setItem('@DeliveryNow: user', this.state.user);
-            alert('Seja Bem-Vindo '+ this.state.user);
+            Alert.alert('Seja Bem-Vindo '+ this.state.user);
             this.props.navigation.navigate('Home');
+        } else {
+            Alert.alert('Usuário/senha inválidos');
         }
     }
 
@@ -43,9 +56,8 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
-
                 <View style={styles.logoContainer}>
-                    <Image source={Logo} style={{width: 110, height: 120,alignSelf: 'center'}}/>
+                    <Image source={Logo} style={{width: 110, height: 110,alignSelf: 'center'}}/>
                 </View>
                 
                 <Text style={styles.tituloTxt}>Delivery Now</Text>

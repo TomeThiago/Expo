@@ -1,28 +1,29 @@
 import { StyleSheet } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#424242',
-        backgroundImage: 'url(../assets/bg-pizza.jpg)',
+        backgroundColor: '#F8F9F9',
         justifyContent: 'center',
         alignItems: 'stretch',
         paddingHorizontal: 30
     },
 
     tituloTxt: {
-        color: '#FFF',
+        color: '#808080',
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 20,
         alignSelf: 'center',
+        marginTop: 15,
         marginBottom: 15
     },
 
     input: {
         height: 45,
         borderWidth: 1,
-        borderColor: '#DDD',
-        color: '#FFF',
+        borderColor: '#4D5656',
+        color: '#717D7E',
         borderRadius: 4,
         fontSize: 16,
         paddingHorizontal: 20,
@@ -46,23 +47,34 @@ const styles = StyleSheet.create({
         color: "#FFF"
     },
 
-    inputIconEye: {
-        color: '#FFF',
-        alignSelf: 'flex-end',
-        marginRight: 8,
-        top: -36,
-    },
-
     footerContainer: {
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop : 20
     },
 
     footerText: {
-        color: '#FFF',
+        color: '#717D7E',
         fontSize: 16,
-        fontWeight: 'bold'
     },
+    footerBold: {
+        color: '#717D7E',
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontStyle: 'italic'
+    },
+    floatButton: {
+        position: 'absolute',
+        right: 30,
+        bottom: 30 + getBottomSpace(),
+        bottom: 30,
+        width: 60,
+        height: 60,
+        backgroundColor: '#1e88e5',
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });
 
 export default styles;

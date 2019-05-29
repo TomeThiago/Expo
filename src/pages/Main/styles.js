@@ -3,7 +3,7 @@ import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#424242',
+        backgroundColor: '#F8F9F9',
         paddingHorizontal: 10,
         paddingTop: Platform.OS === "ios" ? getStatusBarHeight() : 0,
     },
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         height: 45,
         paddingHorizontal: 0,
         justifyContent: 'center',
-        backgroundColor: '#212121',
+        backgroundColor: '#F8F9F9',
     },
 
     titleTxt: {
@@ -40,23 +40,23 @@ const styles = StyleSheet.create({
 
     pedidoNumero: {
         fontSize: 14,
-        color: '#FFF'
+        color: '#000'
     },
 
     pedidoMesa: {
         fontSize: 14,
-        color: '#FFF'
+        color: '#000'
     },
 
     pedidoTotal: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#FFF'
+        color: '#000'
     },
 
     separator: {
         height: 1,
-        backgroundColor: '#EEE'
+        backgroundColor: '#999'
     },
 
     floatButton: {

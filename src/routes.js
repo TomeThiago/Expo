@@ -2,6 +2,7 @@ import { createAppContainer, createStackNavigator, createSwitchNavigator } from 
 
 import Login from './pages/Login';
 import Main from './pages/Main';
+import Home from './pages/Home';
 import Itens from './pages/Itens';
 import Insert from './pages/Insert';
 import Info from './pages/Info';
@@ -14,14 +15,14 @@ const Routes = createAppContainer(
                 header: null,
             }),
         },
-
-       Main: {
-            screen: Main,
+        
+        Home: {
+            screen: Home,
             navigationOptions: () => ({
-                title: 'Pedidos',
+                title: 'Home',
                 headerStyle: {
                     align: 'center',
-                    backgroundColor: '#212121',
+                    backgroundColor: '#1e88e5',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -30,13 +31,29 @@ const Routes = createAppContainer(
             }),
         },
 
+       Main: {
+            screen: Main,
+            navigationOptions: () => ({
+                title: 'Pedidos',
+                headerStyle: {
+                    align: 'center',
+                    backgroundColor: '#1e88e5',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },    
+            }),
+        },
+
+
         Itens: {
             screen: Itens,
             navigationOptions: () => ({
                 title: 'Itens',
                 headerStyle: {
                     align: 'center',
-                    backgroundColor: '#212121',
+                    backgroundColor: '#1e88e5',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -50,7 +67,7 @@ const Routes = createAppContainer(
             navigationOptions: () => ({
                 title: 'Insira os Dados',
                 headerStyle: {
-                    backgroundColor: '#212121',
+                    backgroundColor: '#1e88e5',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -65,7 +82,7 @@ const Routes = createAppContainer(
                 title: 'Informações Gerais',
                 headerStyle: {
                     align: 'center',
-                    backgroundColor: '#212121',
+                    backgroundColor: '#1e88e5',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {

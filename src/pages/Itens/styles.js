@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#424242',
+        backgroundColor: '#F8F9F9',
         paddingHorizontal: 10,
         //paddingTop: Platform.OS === "ios" ? getStatusBarHeight() : 0,
     },
@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
         height: 45,
         paddingHorizontal: 0,
         justifyContent: 'center',
-        backgroundColor: '#212121',
+        backgroundColor: '#F8F9F9',
     },
 
     titleTxt: {
-        color: '#FFF',
+        color: '#000',
         fontWeight: 'bold',
         fontSize: 20,
         alignSelf: 'center'
@@ -36,23 +36,23 @@ const styles = StyleSheet.create({
 
     itemDescricao: {
         fontSize: 14,
-        color: '#FFF'
+        color: '#000'
     },
 
     itemQuantidade: {
         fontSize: 14,
-        color: '#FFF'
+        color: '#000'
     },
 
     itemPreco: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#FFF'
+        color: '#000'
     },
 
     separator: {
         height: 1,
-        backgroundColor: '#EEE'
+        backgroundColor: '#BBB'
     },
 
     floatButton: {

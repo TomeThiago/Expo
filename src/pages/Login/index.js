@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { AsyncStorage } from "react-native";
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import Logo from '../../../assets/pizza-icon-lg.png';
+import Logo from '../../../assets/pizza-icon.png';
 import styles from './styles';
 
 export default class Login extends Component {
@@ -18,7 +18,7 @@ export default class Login extends Component {
     async componentDidMount() {
         const box = await AsyncStorage.getItem('@DeliveryNow: user');
         if (box) {
-            this.props.navigation.navigate('Main');    
+            this.props.navigation.navigate('Home');    
         }
     }
 
@@ -28,7 +28,7 @@ export default class Login extends Component {
         } else {
             await AsyncStorage.setItem('@DeliveryNow: user', this.state.user);
             alert('Seja Bem-Vindo '+ this.state.user);
-            this.props.navigation.navigate('Main');
+            this.props.navigation.navigate('Home');
         }
     }
 

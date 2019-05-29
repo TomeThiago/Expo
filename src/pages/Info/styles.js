@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#424242',
+        backgroundColor: '#F8F9F9',
         paddingHorizontal: 10,
         //paddingTop: Platform.OS === "ios" ? getStatusBarHeight() : 0,
     },
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     input: {
         height: 45,
         borderWidth: 1,
-        borderColor: '#DDD',
+        borderColor: '#999',
         borderRadius: 4,
         fontSize: 16,
         color: '#FFF',

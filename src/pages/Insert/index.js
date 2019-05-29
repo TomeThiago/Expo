@@ -53,7 +53,7 @@ export default class Main extends Component {
                 <View style={styles.container}>
                     
                     <TextInput style={styles.input}
-                        placeholder="Digite um pizza"
+                        placeholder="Digite uma pizza"
                         placeholderTextColor="#999"
                         onChangeText={(descricao) => this.setState({descricao})}
                         value={this.state.descricao}

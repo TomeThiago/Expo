@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#424242',
+        backgroundColor: '#F8F9F9',
         alignItems: 'stretch',
         paddingHorizontal: 30
     },
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         height: 45,
         paddingHorizontal: 0,
         justifyContent: 'center',
-        backgroundColor: '#212121',
+        backgroundColor: '#F8F9F9',
     },
 
     containerTotal: {
@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     },
 
     titleTotal: {
-        color: '#FFF',
+        color: '#000',
         fontWeight: 'bold',
         fontSize: 28,
     },
 
     titleTxt: {
-        color: '#FFF',
+        color: '#000',
         fontWeight: 'bold',
         fontSize: 20,
         alignSelf: 'center'
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     input: {
         height: 45,
         borderWidth: 1,
-        borderColor: '#DDD',
+        borderColor: '#999',
         borderRadius: 4,
         fontSize: 16,
-        color: '#FFF',
+        color: '#000',
         paddingHorizontal: 20,
         marginTop: 15,
     },
@@ -50,8 +50,10 @@ const styles = StyleSheet.create({
     picker: {
         height: 50, 
         width: 150, 
-        color: '#FFF',
-        borderColor: '#DDD'
+        color: '#000',
+        borderWidth: 3,
+        borderColor: '#999',
+        borderRadius: 4
     },
 
     floatButton: {

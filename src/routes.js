@@ -19,6 +19,7 @@ const Routes = createAppContainer(
             screen: Main,
             navigationOptions: () => ({
                 title: 'Pedidos',
+                headerLeft: null,
                 headerStyle: {
                     align: 'center',
                     backgroundColor: '#212121',

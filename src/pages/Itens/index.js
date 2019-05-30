@@ -12,10 +12,6 @@ export default class Main extends Component {
         total: 0
     };
 
-    componentDidMount() {
-        this.loadItems();
-    }
-
     loadItems = async () => {
         const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
         const response = await api.get(`/pedido/${pedido}/itens`);
@@ -49,11 +45,12 @@ export default class Main extends Component {
     );
 
     includeItem = async () => {
-        const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
         this.props.navigation.navigate('Insert');
     }
 
-    render() {
+    render() 
+    {
+        this.loadItems();
         return (
                 <View style={styles.container}>
 

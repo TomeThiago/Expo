@@ -6,13 +6,15 @@ import api from '../../services/api';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
+import Itens from '../Itens';
+
 export default class Main extends Component {
     state = {
         descricao: '',
         quantidade: 1,
         tamanho: 'Grande',
-        preco: 0,
-        total: 0
+        preco: 0.00,
+        total: 0.00
     }
 
     backinItem = async () => {
@@ -27,18 +29,14 @@ export default class Main extends Component {
             return
         }
         
-        const data = new FormData();
-
-        data.append('item', {
-            descricao: this.state.descricao,
-            //tamanho: this.state.tamanho,
-            quantidade: this.state.descricao,
-            preco: this.state.descricao,
-            //total: this.state.total,
-        });
-        
         const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
-        api.post(`/pedido/${pedido}}/itens`, data);
+        api.post(`/pedido/${pedido}/itens`, {
+            descricao: this.state.descricao,
+            tamanho: this.state.tamanho,
+            quantidade: this.state.quantidade,
+            preco: this.state.preco,
+            total: this.state.total,
+        });
 
         ToastAndroid.show('Item adicionado com sucesso!', ToastAndroid.SHORT);
         this.props.navigation.navigate('Itens');
@@ -67,7 +65,7 @@ export default class Main extends Component {
                         }>
                         <Picker.Item label="Broto" value="broto" />
                         <Picker.Item label="Média" value="media" />
-                        <Picker.Item label="Grande" value="grande" />
+                        <Picker.Item selectedValue label="Grande" value="grande" />
                         <Picker.Item label="Família" value="familia" />
                     </Picker>
 

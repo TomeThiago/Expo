@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
 import { AsyncStorage } from "react-native";
 
 import api from '../../services/api';
@@ -18,31 +18,21 @@ export default class Login extends Component {
 
     async componentDidMount() {
         const box = await AsyncStorage.getItem('@DeliveryNow: user');
-        if (box) {
+        /*if (box) {
             this.props.navigation.navigate('Main');    
-        }
-        BackHandler.addEventListener('hardwareBackPress', () => { return false; });
-    }
-
-    componentWillUnmount() {
-        this.backHandler.remove();
+        }*/
     }
 
     handleSignIn = async () => {
         const response = await api.post('/authenticate', {
-            user: this.state.user,
-            password: this.state.pass
+                user: this.state.user,
+                password: this.state.pass
         });
 
-        const { user } = response.data;
-
-        if (!user) {
-            await AsyncStorage.setItem('@DeliveryNow: user', this.state.user);
-            Alert.alert('Seja Bem-Vindo '+ this.state.user);
+            const { usuario } = response.data;
+            
+            await AsyncStorage.setItem('@DeliveryNow: user', usuario);
             this.props.navigation.navigate('Main');
-        } else {
-            Alert.alert('Usuário/senha inválidos');
-        }
     }
 
     showPass = () => {
@@ -96,10 +86,6 @@ export default class Login extends Component {
                 <TouchableOpacity onPress={this.handleSignIn} style={styles.button}>
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
-
-                <View style={styles.footerContainer}>
-                    <Text style={styles.footerText}>Desenvolvido por Thiago Tomé</Text>
-                </View>
             </View>
         );
     }

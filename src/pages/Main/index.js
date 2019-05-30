@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native';
 import { AsyncStorage } from "react-native";
 
 import api from '../../services/api';
@@ -39,8 +39,16 @@ export default class Main extends Component {
         this.props.navigation.navigate('Itens');
     }
 
+    excluirPedido = async (ID) => {
+        await api.delete(`/pedido/${ID}`);
+        this.setState({ pedido: []});
+        this.loadPedidos();
+        Alert.alert('Atenção','Pedido excluído com sucesso!');
+    }
+
     renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => this.consultarPedido(item._id)} style={styles.items}>
+        <TouchableOpacity onPress={() => this.consultarPedido(item._id)} style={styles.items} 
+            onLongPress={() => this.loadOptions(item._id)}>
             <View style={styles.pedidoContainer}>
                 <Text style={styles.pedidoNumero}>{item.numero}</Text>
             </View>
@@ -59,6 +67,24 @@ export default class Main extends Component {
 
         this.loadPedidos(pageNumber);
     }
+
+    loadOptions = (ID) => {
+        Alert.alert(
+            'Alerta',
+            'Deseja excluir o pedido selecionado?',
+            [
+              {
+                text: 'Não',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {text: 'Sim', onPress: () => this.excluirPedido(ID)},
+            ],
+            {cancelable: false},
+          );
+    }
+
+
 
     render() {
         return ( 

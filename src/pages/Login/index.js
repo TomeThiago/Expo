@@ -18,9 +18,9 @@ export default class Login extends Component {
 
     async componentDidMount() {
         const box = await AsyncStorage.getItem('@DeliveryNow: user');
-        /*if (box) {
+        if (box) {
             this.props.navigation.navigate('Main');    
-        }*/
+        }
     }
 
     handleSignIn = async () => {

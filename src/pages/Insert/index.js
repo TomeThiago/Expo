@@ -27,18 +27,13 @@ export default class Main extends Component {
             return
         }
         
-        const data = new FormData();
-
-        data.append('item', {
+        const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
+        api.post(`/pedido/${pedido}}/itens`, {
             descricao: this.state.descricao,
-            //tamanho: this.state.tamanho,
+            tamanho: this.state.tamanho,
             quantidade: this.state.descricao,
             preco: this.state.descricao,
-            //total: this.state.total,
-        });
-        
-        const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
-        api.post(`/pedido/${pedido}}/itens`, data);
+            total: this.state.total});
 
         ToastAndroid.show('Item adicionado com sucesso!', ToastAndroid.SHORT);
         this.props.navigation.navigate('Itens');

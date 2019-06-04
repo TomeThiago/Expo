@@ -24,7 +24,7 @@ export default class Login extends Component {
 
     handleSignIn = async () => {
         if ((this.state.user != 'admin') || (this.state.pass != 'admin')) {
-            alert('Usuário ou senha inválidos!');
+            alert('Alerta','Usuário ou senha inválidos!');
         } else {
             await AsyncStorage.setItem('@DeliveryNow: user', this.state.user);
             this.props.navigation.navigate('Main');

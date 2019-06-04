@@ -49,7 +49,6 @@ export default class Main extends Component {
     );
 
     includeItem = async () => {
-        const pedido = await AsyncStorage.getItem('@DeliveryNow: pedido');
         this.props.navigation.navigate('Insert');
     }
 

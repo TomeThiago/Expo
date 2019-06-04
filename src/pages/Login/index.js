@@ -23,11 +23,10 @@ export default class Login extends Component {
     }
 
     handleSignIn = async () => {
-        if ((this.state.user != 'Thiago') || (this.state.pass != 'teste')) {
+        if ((this.state.user != 'admin') || (this.state.pass != 'admin')) {
             alert('Usuário ou senha inválidos!');
         } else {
             await AsyncStorage.setItem('@DeliveryNow: user', this.state.user);
-            alert('Seja Bem-Vindo '+ this.state.user);
             this.props.navigation.navigate('Main');
         }
     }
@@ -83,10 +82,6 @@ export default class Login extends Component {
                 <TouchableOpacity onPress={this.handleSignIn} style={styles.button}>
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
-
-                <View style={styles.footerContainer}>
-                    <Text style={styles.footerText}>Desenvolvido por Thiago Tomé</Text>
-                </View>
             </View>
         );
     }
